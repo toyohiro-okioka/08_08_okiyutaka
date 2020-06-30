@@ -72,12 +72,12 @@ if ($record["is_deleted"] == "1") {
 
       <div>
         <!-- admin: <input type="checkbox" name="admin"> -->
-        admin:<input type="checkbox" name="admin" value=" <?= $record["is_admin"] ?>" <?= $is_admin_checked ?>>
+        admin:<input type="checkbox" name="admin" value="1" <?= $is_admin_checked ?>>
 
       </div>
       <div>
         <!-- delete: <input type="checkbox" name="delete"> -->
-        delete:<input type="checkbox" name="delete" value=" <?= $record["is_deleted"] ?>" <?= $is_deleted_checked ?>>
+        delete:<input type="checkbox" name="delete" value="1" <?= $is_deleted_checked ?>>
       </div>
 
       <!-- hidden -->
