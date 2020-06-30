@@ -31,8 +31,18 @@ if ($status == false) {
   // 正常にSQLが実行された場合は指定の11レコードを取得
   // fetch()関数でSQLで取得したレコードを取得できる
   $record = $stmt->fetch(PDO::FETCH_ASSOC);
-  // var_dump($record);
-  // exit();
+}
+
+if ($record["is_admin"] == "1") {
+  $is_admin_checked = "checked";
+} else {
+  $is_admin_checked = "";
+}
+
+if ($record["is_deleted"] == "1") {
+  $is_deleted_checked = "checked";
+} else {
+  $is_deleted_checked = "";
 }
 
 ?>
@@ -62,11 +72,12 @@ if ($status == false) {
 
       <div>
         <!-- admin: <input type="checkbox" name="admin"> -->
-        admin:<input type="checkbox" name="admin" value=" <?= $record["is_admin"] ?>">
+        admin:<input type="checkbox" name="admin" value=" <?= $record["is_admin"] ?>" <?= $is_admin_checked ?>>
+
       </div>
       <div>
         <!-- delete: <input type="checkbox" name="delete"> -->
-        delete:<input type="checkbox" name="delete" value=" <?= $record["is_deleted"] ?>">
+        delete:<input type="checkbox" name="delete" value=" <?= $record["is_deleted"] ?>" <?= $is_deleted_checked ?>>
       </div>
 
       <!-- hidden -->
